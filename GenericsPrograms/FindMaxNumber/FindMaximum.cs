@@ -8,7 +8,7 @@ namespace GenericsPrograms.FindMaximum
 {
     public class FindMaximum
     {
-        public int FindMaxInt(int first, int second, int third)
+        public int FindMaxInteger(int first, int second, int third)
         {
             if (first.CompareTo(second) > 0 && first.CompareTo(third) > 0)
             {
@@ -17,12 +17,30 @@ namespace GenericsPrograms.FindMaximum
             }
             if (second.CompareTo(first) > 0 && second.CompareTo(third) > 0)
             {
-                Console.WriteLine("Second Number is greater: " + second);
+                Console.WriteLine("Second Number is Greater: " + second);
                 return second;
             }
             else
             {
-                Console.WriteLine("Third Number is greater: " + third);
+                Console.WriteLine("Third Number is Greater: " + third);
+                return third;
+            }
+        }
+        public float FindMaxFloat(float first, float second, float third)
+        {
+            if (first.CompareTo(second) > 0 && first.CompareTo(third) > 0)
+            {
+                Console.WriteLine("First Float Number is Greater: " + first);
+                return first;
+            }
+            if (second.CompareTo(first) > 0 && second.CompareTo(third) > 0)
+            {
+                Console.WriteLine("Second Float Number is Greater: " + second);
+                return second;
+            }
+            else
+            {
+                Console.WriteLine("Third Float Number is Greater: " + third);
                 return third;
             }
         }

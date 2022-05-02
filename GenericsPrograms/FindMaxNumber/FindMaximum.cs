@@ -19,14 +19,14 @@ namespace GenericsPrograms.FindMaximum
             Array.Sort(values);
             return values;
         }
-        public T MaxValue(params T[] values)
+        public T MaxVal(params T[] values)
         {
             var sorted_values = Sort(values);
             return sorted_values[^1];
         }
-        public T PrintMaxMethod()
+        public T MaxMethod()
         {
-            var max = MaxValue(this.Val);
+            var max = MaxVal(this.Val);
             Console.WriteLine("Maximum Value is :" + max);
             return max;
         }

@@ -6,9 +6,17 @@ using System.Threading.Tasks;
 
 namespace GenericsPrograms.FindMaximum
 {
-    public class FindMaximum
+    public class FindMaximum<T> where T : IComparable
     {
-        public int FindMaxInteger(int first, int second, int third)
+        public T first, second, third;
+
+        public FindMaximum(T first, T second, T third)
+        {
+            this.first = first;
+            this.second = second;
+            this.third = third;
+        }
+        public T FindMax()
         {
             if (first.CompareTo(second) > 0 && first.CompareTo(third) > 0)
             {
@@ -25,45 +33,12 @@ namespace GenericsPrograms.FindMaximum
                 Console.WriteLine("Third Number is greater: " + third);
                 return third;
             }
+            return default;
         }
-        public float FindMaxFloat(float first, float second, float third)
+        public T MaxMethod()
         {
-            if (first.CompareTo(second) > 0 && first.CompareTo(third) > 0)
-            {
-                Console.WriteLine("First Float Number is greater: " + first);
-                return first;
-            }
-            if (second.CompareTo(first) > 0 && second.CompareTo(third) > 0)
-            {
-                Console.WriteLine("Second Float Number is greater: " + second);
-                return second;
-            }
-            else
-            {
-                Console.WriteLine("Third Float Number is greater: " + third);
-                return third;
-            }
-        }
-        public string FindMaxString(string first, string second, string third)
-        {
-            int first_Length = first.Length;
-            int second_Length = second.Length;
-            int third_Length = third.Length;
-            if (first_Length.CompareTo(second_Length) > 0 && first_Length.CompareTo(third_Length) > 0)
-            {
-                Console.WriteLine("First String Length is greater: " + first);
-                return first;
-            }
-            if (second_Length.CompareTo(first_Length) > 0 && second_Length.CompareTo(third_Length) > 0)
-            {
-                Console.WriteLine("Second String Length is greater: " + second);
-                return second;
-            }
-            else
-            {
-                Console.WriteLine("Third String Length is greater: " + third);
-                return third;
-            }
+            T max = FindMax();
+            return max;
         }
     }
 }

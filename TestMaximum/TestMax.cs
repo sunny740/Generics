@@ -5,7 +5,7 @@ namespace TestMaximum
 {
     public class Tests
     {
-         [Test]
+        [Test]
         public void GivenIntInput_WhenTestMax_ShouldReturnMaximum()
         {
             FindMaximum max = new FindMaximum();
@@ -31,7 +31,7 @@ namespace TestMaximum
         {
             FindMaximum max = new FindMaximum();
             float actual = max.FindMaxFloat(1.2f, 3.6f, 6.7f);
-            Assert.AreEqual(actual,6.7f);
+            Assert.AreEqual(actual, 6.7f);
         }
         [Test]
         public void GivenMaxNumfloatPositionOne_WhenTestMax_ShouldReturnMaximum()
@@ -44,8 +44,29 @@ namespace TestMaximum
         public void GivenMaxNumfloatPositionTwo_WhenTestMax_ShouldReturnMaximum()
         {
             FindMaximum max = new FindMaximum();
-            float actual = max.FindMaxFloat(1.2f,6.7f,3.6f);
+            float actual = max.FindMaxFloat(1.2f, 6.7f, 3.6f);
             Assert.AreEqual(actual, 6.7f);
+        }
+        [Test]
+        public void GivenStringInput_WhenTestMax_ShouldReturnMaximum()
+        {
+            FindMaximum max = new FindMaximum();
+            string actual = max.FindMaxString("Apple", "Peach", "Banana");
+            Assert.AreEqual(actual, "Banana");
+        }
+        [Test]
+        public void GivenMaxStringPositionOne_WhenTestMax_ShouldReturnMaximum()
+        {
+            FindMaximum max = new FindMaximum();
+            string actual = max.FindMaxString("Banana", "Apple", "Peach");
+            Assert.AreEqual(actual, "Banana");
+        }
+        [Test]
+        public void GivenMaxStringPositionTwo_WhenTestMax_ShouldReturnMaximum()
+        {
+            FindMaximum max = new FindMaximum();
+            string actual = max.FindMaxString("Apple", "Banana", "Peach");
+            Assert.AreEqual(actual, "Banana");
         }
     }
 }
